@@ -1,0 +1,142 @@
+.journeyContainer {
+  background: linear-gradient(135deg, #0a192f, #7b61ff);
+  padding: 80px 20px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible .step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.leftStep {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.rightStep {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.stepContent {
+  padding: 30px;
+  width: 300px;
+  border-radius: 12px;
+  background: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  color: white;
+  border: 1px solid rgba(123, 97, 255, 0.2);
+}
+
+.stepContent:hover {
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #00e6fe;
+}
+
+.stepTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.stepDescription {
+  font-size: 16px;
+  color: #d4d4d4;
+}
+
+.curvedArrow {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background: none;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  border-radius: 50px;
+  transform: rotate(45deg);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step:last-child .curvedArrow {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .step {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .leftStep, .rightStep {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stepContent {
+    width: 250px;
+  }
+
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .stepDescription {
+    font-size: 14px;
+  }
+}
